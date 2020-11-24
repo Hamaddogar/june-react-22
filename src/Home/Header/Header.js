@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 
 class Header extends React.Component {
 
@@ -17,11 +19,20 @@ class Header extends React.Component {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <Link  to="/">Home</Link>
+     
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+    <Link  to="/about">About</Link>
       </li>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <li class="nav-item">
+      <Link  to="/contact">Contact</Link>
+      </li>
+        
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown

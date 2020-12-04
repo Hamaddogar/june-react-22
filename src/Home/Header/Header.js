@@ -116,8 +116,8 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}></MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}> <Link to="/login">Login</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}> <Link to="/SignUP">SignUP</Link></MenuItem>
     </Menu>
   );
 

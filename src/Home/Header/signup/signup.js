@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -48,7 +48,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const  [state,setState]=useState({})
+  const updateState=(e)=>{
+    state[e.target.id]=e.target.value
+    setState({...state})
+  }
+    
+  const getData=(e)=>{
+ e.preventDefault()
+ alert("Data saved")
+   console.log(state)
 
+  }
+  
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -70,6 +82,8 @@ export default function SignUp() {
                 fullWidth
                 id="firstName"
                 label="First Name"
+                 onChange={updateState}
+                 
                 autoFocus
               />
             </Grid>
@@ -82,6 +96,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={updateState}
+
               />
             </Grid>
             <Grid item xs={12}>
@@ -93,6 +109,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={updateState}
+
               />
             </Grid>
             <Grid item xs={12}>
@@ -105,6 +123,8 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={updateState}
+
               />
             </Grid>
             <Grid item xs={12}>
@@ -120,6 +140,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={getData}
           >
             Sign Up
           </Button>

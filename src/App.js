@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import Home from '../src/Home/home';
 import About from '../src/About/About'
 import Contact from '../src/contact/contact'
-import Testcmp from '../src/functionalComponent/functionalComponent'
  import Login from '../src/Home/Header/login/login'
  import Signup from '../src/Home/Header/signup/signup'
 
@@ -22,9 +21,6 @@ class App extends React.Component {
          <Route  path="/contact" component={Contact}/> 
          <Route  path="/SignUP" component={Signup}/> 
          <Route  path="/login" component={Login}/> 
-
-
-
        
        </BrowserRouter>
 

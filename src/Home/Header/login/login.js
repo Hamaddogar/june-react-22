@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -59,6 +59,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
+  const [state,setState]=useState({})
+  const updateState=(e)=>{
+   state[e.target.id]=e.target.value;
+   setState({...state})
+
+  }
+   const getData=(e)=>{
+   e.preventDefault();
+   console.log(state)
+ localStorage.setItem("Login-Data",JSON.stringify(state))
+   }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -82,6 +93,7 @@ export default function SignInSide() {
               label="Email Address"
               name="email"
               autoComplete="email"
+               onChange={updateState}
               autoFocus
             />
             <TextField
@@ -93,6 +105,8 @@ export default function SignInSide() {
               label="Password"
               type="password"
               id="password"
+              onChange={updateState}
+
               autoComplete="current-password"
             />
             <FormControlLabel
@@ -105,6 +119,7 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={getData}
             >
               Sign In
             </Button>

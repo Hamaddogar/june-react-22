@@ -4,6 +4,7 @@ import React from 'react'
   import Footer from '../Home/Footer/footer'
 
 
+
 class Home extends React.Component {
 
 
@@ -12,9 +13,11 @@ class Home extends React.Component {
         return (
 
             <div>
+
+         
              <Header/>
              <Body/>
-             <Footer/>
+             <Footer/> 
 
             </div>
         )

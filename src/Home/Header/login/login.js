@@ -13,6 +13,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
+ import '../../../config';
+  import {store} from '../../../Store/store'
+  // import * as firebase from 'firebase'
+
+  import firebase from 'firebase'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -67,8 +72,18 @@ export default function SignInSide() {
   }
    const getData=(e)=>{
    e.preventDefault();
-   console.log(state)
- localStorage.setItem("Login-Data",JSON.stringify(state))
+
+
+    firebase.database().ref("users").push(state)
+  // action
+   store.dispatch({
+     type:"MY_DATA",
+     payload:state
+   })
+
+
+
+//  localStorage.setItem("Login-Data",JSON.stringify(state))
    }
 
   return (
